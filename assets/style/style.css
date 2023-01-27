@@ -162,6 +162,41 @@ tbody td {
   height: 1.4rem;
   background-color: white;
 }
+.padredetails {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 75%;
+  margin: 6rem 0 6rem 14rem;
+}
+#tarjetadetails {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30rem;
+  height: 35rem;
+  margin: 1rem;
+  border: 5px double rgb(255, 0, 149);
+  background-color: black;
+}
+#tarjetadetails2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30rem;
+  height: 35rem;
+  margin: 1rem;
+  border: 5px double rgb(255, 0, 149);
+  background-color: black;
+  color: white;
+  font-size: 1.5rem;
+}
+#imgdetails {
+  width: 28rem;
+  height: 25rem;
+  border: 5px double rgb(255, 0, 149);
+}
 footer {
   height: 10vh;
   display: flex;
@@ -183,6 +218,22 @@ footer {
   #tarjeta {
     width: 100%;
     margin: 0;
+  }
+  #imgdetails {
+    width: 9rem;
+    height: 9rem;
+  }
+  #tarjetadetails {
+    width: 10rem;
+    height: 11rem;
+    margin: 0;
+  }
+  #tarjetadetails2 {
+    height: 29rem;
+    font-size: 1rem;
+  }
+  .padredetails {
+    margin: 2rem;
   }
 }
 @media (min-width: 375px) and (max-width: 465px) {
