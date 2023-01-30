@@ -220,12 +220,12 @@ footer {
     margin: 0;
   }
   #imgdetails {
-    width: 9rem;
-    height: 9rem;
+    width: 14rem;
+    height: 16rem;
   }
   #tarjetadetails {
-    width: 10rem;
-    height: 11rem;
+    width: 16rem;
+    height: 18rem;
     margin: 0;
   }
   #tarjetadetails2 {
@@ -233,7 +233,7 @@ footer {
     font-size: 1rem;
   }
   .padredetails {
-    margin: 2rem;
+    margin: 3rem;
   }
 }
 @media (min-width: 375px) and (max-width: 465px) {
