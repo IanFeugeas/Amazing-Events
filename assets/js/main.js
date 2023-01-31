@@ -3,8 +3,6 @@ let infocards = data.events;
 let divCards = "";
 
 for (let infocard of infocards) {
-  //   divCards += document.createElement("div");
-  //   divCards.className = "card";
   divCards += `<div id="tarjetas" class="card">
   <img
     id="imgcard"
