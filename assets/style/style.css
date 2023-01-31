@@ -83,7 +83,7 @@ label {
   margin: 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   border: 5px double rgb(255, 0, 149);
@@ -92,8 +92,8 @@ label {
 }
 .divprice {
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  justify-content: space-between;
+  text-align: center;
 }
 #imgcard {
   width: 18rem;
@@ -101,6 +101,11 @@ label {
   border-radius: 15px;
   margin-top: 0.5rem;
   border: 5px double rgb(255, 0, 149);
+}
+#bodycard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 h5 {
   text-align: center;
@@ -232,7 +237,7 @@ footer {
     height: 29rem;
     font-size: 1rem;
   }
-  .padredetails {
+  #padredetails {
     margin: 3rem;
   }
 }

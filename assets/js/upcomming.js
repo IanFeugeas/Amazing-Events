@@ -1,21 +1,20 @@
 const padrecards = document.getElementById("padrecards");
-let infocards = data;
+let infoCards = data.events;
 let divCards = "";
-for (let infocard of infocards) {
-  //   function dateEvents(date1, date2) {
-  //     if (div1 === date1 > date2) {
-  //       return divCards;
-  //     }
-  //   }
-  divCards += `<div id="tarjetas" class="card">
+let fechaActual = data.currentDate;
+
+for (let infocard of infoCards) {
+  if (`${infocard.date}` > fechaActual) {
+    divCards += `<div id="tarjetas" class="card">
     <img
       id="imgcard"
       src= ${infocard.image}
       class="card-img-top"
       alt=""
     />
-    <div class="card-body">
+    <div id="bodycard" class="card-body">
       <h5 class="card-title"> ${infocard.name}</h5>
+      
       <p class="card-text">
         ${infocard.description}
       </p>
@@ -25,5 +24,6 @@ for (let infocard of infocards) {
       </div>
     </div>
   </div>`;
+  }
 }
 padrecards.innerHTML = divCards;
