@@ -79,7 +79,7 @@ label {
 }
 #tarjetas {
   width: 20rem;
-  height: 30rem;
+  height: 32rem;
   margin: 1rem;
   display: flex;
   flex-direction: column;

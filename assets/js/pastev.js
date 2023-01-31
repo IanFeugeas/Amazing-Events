@@ -18,6 +18,9 @@ for (let infocard of infoCards) {
       <p class="card-text">
         ${infocard.description}
       </p>
+      <p class="card-text">
+        ${infocard.date}
+      </p>
       <div class="divprice">
         <p><b>Price:</b> $ ${infocard.price}</p>
         <a href="./details.html" class="btn btn-primary">Go details</a>
