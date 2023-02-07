@@ -23,3 +23,21 @@ for (let infocard of infocards) {
 </div>`;
 }
 padrecards.innerHTML = divCards;
+
+const checks = document.getElementsById("category");
+const category = eventInfo.map((eventInfo) => eventInfo.category);
+const oneCategory = new Set(category);
+const arrayCategory = [...oneCategory];
+let divChecks = "";
+
+for (let checks of arrayCategory) {
+  divChecks += `<div>
+  <input
+    type="checkbox"
+    id="all-checks"
+    value="${checks}"
+  />
+  <label for="${checks}">${checks}</label>
+</div>`;
+}
+checks.innerHTML = divChecks;
