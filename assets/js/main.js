@@ -1,9 +1,17 @@
 const padrecards = document.getElementById("padrecards");
-let infocards = data.events;
-let divCards = "";
+let infoCards = data.events;
 
-for (let infocard of infocards) {
-  divCards += `<div id="tarjetas" class="card">
+const checks = document.getElementById("categories");
+const category = infoCards.map((infoCards) => infoCards.category);
+const oneCategory = new Set(category);
+const arrayCategory = [...oneCategory];
+let divChecks = "";
+
+createCard(infoCards);
+function createCard(e) {
+  let divCards = "";
+  for (let infocard of e) {
+    divCards += `<div id="tarjetas" class="card">
   <img
     id="imgcard"
     src= ${infocard.image}
@@ -21,23 +29,37 @@ for (let infocard of infocards) {
     </div>
   </div>
 </div>`;
+  }
+  padrecards.innerHTML = divCards;
 }
-padrecards.innerHTML = divCards;
 
-const checks = document.getElementsById("category");
-const category = eventInfo.map((eventInfo) => eventInfo.category);
-const oneCategory = new Set(category);
-const arrayCategory = [...oneCategory];
-let divChecks = "";
+addDiv(arrayCategory);
 
-for (let checks of arrayCategory) {
-  divChecks += `<div>
+function addDiv() {
+  for (let categoryChecks of arrayCategory) {
+    divChecks += `<div>
   <input
     type="checkbox"
-    id="all-checks"
-    value="${checks}"
+    id="${categoryChecks}"
+    value="${categoryChecks}"
   />
-  <label for="${checks}">${checks}</label>
+  <label for="${categoryChecks}">${categoryChecks}</label>
 </div>`;
+  }
+  checks.innerHTML = divChecks;
 }
-checks.innerHTML = divChecks;
+
+checks.addEventListener("change", () => {
+  let aux = checkboxCategory(infoCards);
+  createCard(aux);
+});
+
+function checkboxCategory(event) {
+  const checkeds = [
+    ...document.querySelectorAll("input[type='checkbox']:checked"),
+  ].map((check) => check.value);
+  if (checkeds.length === 0) {
+    return event;
+  }
+  return event.filter((filterCheck) => checkeds.includes(filterCheck.category));
+}
