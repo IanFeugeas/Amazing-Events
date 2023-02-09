@@ -245,6 +245,34 @@ footer {
 .pfooter {
   margin-right: 0.5rem;
 }
+.diverror {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  background-image: url(../imagenes/no-result-found-1.webp);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 35rem;
+  height: 30rem;
+  border-radius: 16px;
+  margin-bottom: 5rem;
+  border: 1px solid rebeccapurple;
+}
+.ancorerror {
+  text-decoration: none;
+  font-size: 0.8rem;
+  background-color: rgb(255, 0, 149);
+  color: black;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 16px;
+  padding: 0.3rem;
+  margin-bottom: 0.5rem;
+}
+.ancorerror:hover {
+  background-color: white;
+  color: black;
+}
 
 @media (min-width: 375px) and (max-width: 767px) {
   #tarjeta {
@@ -290,6 +318,18 @@ footer {
     flex-direction: column;
     justify-content: center;
     margin-bottom: 1rem;
+  }
+  .diverror {
+    width: 23rem;
+    height: 22rem;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+  }
+  .ancorerror {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+    margin-top: 1rem;
   }
 }
 @media (min-width: 375px) and (max-width: 465px) {

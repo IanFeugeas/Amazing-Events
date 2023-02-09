@@ -69,3 +69,23 @@ function checkboxCategory(event) {
   }
   return event.filter((filterCheck) => checkeds.includes(filterCheck.category));
 }
+
+const $searchInput = document.getElementById("searchInput");
+$searchInput.addEventListener("keyup", (e) => {
+  const search = e.target.value.toLowerCase();
+  const cards = document.querySelectorAll(".card");
+  let variableFalse = true;
+  cards.forEach((card) => {
+    const nombre = card.querySelector(".card-title").innerText.toLowerCase();
+
+    if (nombre.includes(search)) {
+      card.style.display = "block";
+      variableFalse = false;
+    } else {
+      card.style.display = "none";
+    }
+  });
+  if (variableFalse) {
+    padrecards.innerHTML = `<div class="diverror"><a class="ancorerror" href="./pastev.html">Return</a></div>`;
+  }
+});
