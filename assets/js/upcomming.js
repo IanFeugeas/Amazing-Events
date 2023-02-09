@@ -14,12 +14,12 @@ function createCard(e) {
   for (let infocard of e) {
     if (`${infocard.date}` > fechaActual) {
       divCards += `<div id="tarjetas" class="card">
-    <img
+      <div class="divimgcards"><img
       id="imgcard"
       src= ${infocard.image}
       class="card-img-top"
       alt=""
-    />
+    /></div>
     <div id="bodycard" class="card-body">
       <h5 class="card-title"> ${infocard.name}</h5>
       
@@ -30,8 +30,8 @@ function createCard(e) {
         ${infocard.date}
       </p>
       <div class="divprice">
-        <p><b>Price:</b> $ ${infocard.price}</p>
-        <a href="./details.html" class="btn btn-primary">Go details</a>
+        <p class="textprice"><b>Price:</b> $ ${infocard.price}</p>
+        <a id="detailsbutton" href="./details.html" class="btn btn-primary"><b> Go details</b></a>
       </div>
     </div>
   </div>`;
@@ -69,3 +69,19 @@ function checkboxCategory(event) {
   }
   return event.filter((filterCheck) => checkeds.includes(filterCheck.category));
 }
+
+const $searchInput = document.getElementById("searchInput");
+$searchInput.addEventListener("keyup", (e) => {
+  const search = e.target.value.toLowerCase();
+  const cards = document.querySelectorAll(".card");
+  let variableFalse = false;
+  cards.forEach((card) => {
+    const nombre = card.querySelector(".card-title").innerText.toLowerCase();
+    if (nombre.includes(search)) {
+      variableFalse == true;
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+});

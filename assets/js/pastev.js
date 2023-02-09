@@ -14,12 +14,12 @@ function createCard(e) {
   for (let infocard of e) {
     if (`${infocard.date}` < fechaActual) {
       divCards += `<div id="tarjetas" class="card">
-    <img
+      <div class="divimgcards"><img
       id="imgcard"
       src= ${infocard.image}
       class="card-img-top"
       alt=""
-    />
+    /></div>
     <div id="bodycard" class="card-body">
       <h5 class="card-title"> ${infocard.name}</h5>
       

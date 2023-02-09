@@ -7,8 +7,8 @@ header {
   background-color: rgba(0, 0, 0, 0.884);
 }
 .logo {
-  width: 10.5rem;
-  height: 5rem;
+  width: 10rem;
+  height: 4.5rem;
 }
 #ancor {
   color: rgb(255, 0, 149);
@@ -28,27 +28,30 @@ header {
 }
 main {
   min-height: 75vh;
-  background-color: rgb(199, 104, 160);
+  background-color: rgb(252, 48, 167);
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
 }
 .divh1 {
-  height: 8rem;
-  background-color: rgb(90, 90, 90);
+  height: 20rem;
+  width: 100%;
+  background-image: url(../imagenes/fondo\ home.jpg);
+  background-position: center;
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
+  /* border-top: 1px solid black;
+  border-bottom: 1px solid black; */
 }
-h1 {
+.h1tittle {
   color: black;
-  background-color: rgb(199, 104, 160);
+  font-size: 4rem;
   border-radius: 160px;
-  border: 1px solid rgb(211, 74, 154);
-  padding: 1rem;
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.418);
 }
 .formhome {
   display: flex;
@@ -62,6 +65,10 @@ h1 {
 .divform {
   display: flex;
   flex-wrap: wrap;
+  background-color: rgb(236, 8, 141);
+  padding: 0.5rem;
+  color: black;
+  border-radius: 15px;
 }
 form {
   font-size: 1.2rem;
@@ -86,6 +93,7 @@ label {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  border-radius: 15px;
   border: 5px double rgb(255, 0, 149);
   color: white;
   background-color: black;
@@ -93,14 +101,20 @@ label {
 .divprice {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   text-align: center;
+}
+.textprice {
+  padding-top: 0.8rem;
+}
+.divimgcards {
+  margin: 0.7rem 0.7rem 0 0.7rem;
 }
 #imgcard {
   width: 18rem;
   height: 15rem;
   border-radius: 15px;
-  margin-top: 0.5rem;
-  border: 5px double rgb(255, 0, 149);
+  border: 2px solid rgb(255, 0, 149);
 }
 #bodycard {
   display: flex;
@@ -109,6 +123,14 @@ label {
 }
 h5 {
   text-align: center;
+}
+#detailsbutton {
+  background-color: rgb(255, 0, 149);
+  color: black;
+  border: 1px solid white;
+}
+#detailsbutton:hover {
+  background-color: rgba(255, 255, 255, 0.856);
 }
 .divcontact {
   width: 100%;
@@ -154,10 +176,10 @@ td {
   background-color: rgb(199, 104, 160);
 }
 table {
-  width: 70%;
+  width: 80%;
 }
 thead th {
-  height: 3rem;
+  height: 3.1rem;
   font-size: 1.4rem;
   color: black;
   background-color: gray;
@@ -167,40 +189,45 @@ tbody td {
   height: 1.4rem;
   background-color: white;
 }
+
 .padredetails {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  width: 75%;
-  margin: 6rem 0 6rem 14rem;
+  flex-wrap: wrap;
+  background-color: black;
+  border: 5px double rgb(255, 0, 149);
+  width: 55rem;
+  height: 32rem;
+  margin: 5rem 0 5rem 15rem;
+
+  /* margin: 6rem 0 6rem 14rem; */
 }
 #tarjetadetails {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 30rem;
-  height: 35rem;
+  width: 25rem;
+  height: 30rem;
   margin: 1rem;
-  border: 5px double rgb(255, 0, 149);
   background-color: black;
 }
 #tarjetadetails2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 30rem;
-  height: 35rem;
+  width: 25rem;
+  height: 30rem;
   margin: 1rem;
-  border: 5px double rgb(255, 0, 149);
+  border: 2px solid rgb(255, 0, 149);
   background-color: black;
   color: white;
   font-size: 1.5rem;
 }
 #imgdetails {
-  width: 28rem;
-  height: 25rem;
-  border: 5px double rgb(255, 0, 149);
+  width: 22rem;
+  height: 20rem;
+  border: 2px solid rgb(255, 0, 149);
 }
 footer {
   height: 10vh;
@@ -224,21 +251,45 @@ footer {
     width: 100%;
     margin: 0;
   }
+  .padredetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20rem;
+    height: 50rem;
+    margin: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
   #imgdetails {
-    width: 14rem;
+    width: 16rem;
     height: 16rem;
+    margin: 0;
   }
   #tarjetadetails {
-    width: 16rem;
+    width: 17rem;
     height: 18rem;
     margin: 0;
   }
   #tarjetadetails2 {
-    height: 29rem;
+    width: 16rem;
+    height: auto;
     font-size: 1rem;
+    margin: 0;
   }
-  #padredetails {
-    margin: 3rem;
+
+  .formhome {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  #categories {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 1rem;
   }
 }
 @media (min-width: 375px) and (max-width: 465px) {
