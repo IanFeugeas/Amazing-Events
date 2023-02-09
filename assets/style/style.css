@@ -190,7 +190,7 @@ tbody td {
   background-color: white;
 }
 
-.padredetails {
+#details {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -279,7 +279,7 @@ footer {
     width: 100%;
     margin: 0;
   }
-  .padredetails {
+  #details {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -302,7 +302,7 @@ footer {
     margin: 0;
   }
   #tarjetadetails2 {
-    width: 16rem;
+    width: 18rem;
     height: auto;
     font-size: 1rem;
     margin: 0;

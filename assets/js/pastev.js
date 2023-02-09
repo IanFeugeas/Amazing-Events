@@ -31,7 +31,7 @@ function createCard(e) {
       </p>
       <div class="divprice">
         <p><b>Price:</b> $ ${infocard.price}</p>
-        <a href="./details.html" class="btn btn-primary">Go details</a>
+        <a id="detailsbutton" href="./details.html?id=${infocard._id}" class="btn btn-primary">Go details</a>
       </div>
     </div>
   </div>`;
