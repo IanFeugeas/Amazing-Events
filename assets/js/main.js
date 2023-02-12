@@ -32,21 +32,20 @@ function createCard(e) {
   padrecards.innerHTML = divCards;
 }
 
-addDiv(arrayCategory);
-
 function addDiv() {
   for (let categoryChecks of arrayCategory) {
     divChecks += `<div>
-  <input
+    <input
     type="checkbox"
     id="${categoryChecks}"
     value="${categoryChecks}"
-  />
-  <label for="${categoryChecks}">${categoryChecks}</label>
-</div>`;
+    />
+    <label for="${categoryChecks}">${categoryChecks}</label>
+    </div>`;
   }
   checks.innerHTML = divChecks;
 }
+addDiv(arrayCategory);
 
 function checkboxCategory(event) {
   const checkeds = [
