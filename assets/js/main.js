@@ -1,71 +1,28 @@
-const padrecards = document.getElementById("padrecards");
-let infoCards = data.events;
-const checks = document.getElementById("categories");
+import { createCard, addDiv, checkboxCategory } from "./module/funciones.js";
+
+const $padrecards = document.getElementById("padrecards");
+const $checks = document.getElementById("categories");
+const $searchInput = document.getElementById("searchInput");
+
+fetch("https://mindhub-xj03.onrender.com/api/amazing")
+.then(data => data.json());
+
+
+function
+// let infoCards = data.events;
 const category = infoCards.map((infoCards) => infoCards.category);
 const oneCategory = new Set(category);
 const arrayCategory = [...oneCategory];
 let divChecks = "";
 
 createCard(infoCards);
-function createCard(e) {
-  let divCards = "";
-  for (let infocard of e) {
-    divCards += `<div id="tarjetas" class="card">
-  <div class="divimgcards"><img
-    id="imgcard"
-    src= ${infocard.image}
-    class="card-img-top"
-    alt=""
-  /></div>
-  <div id="bodycard" class="card-body">
-    <h5 class="card-title"> ${infocard.name}</h5>
-    <p class="card-text">
-      ${infocard.description}
-    </p>
-    <div class="divprice">
-      <p class="textprice"><b>Price:</b> $ ${infocard.price}</p>
-      <a id="detailsbutton" href="./details.html?id=${infocard._id}" class="btn btn-primary" ><b> Go details</b></a>
-    </div>
-  </div>
-</div>`;
-  }
-  padrecards.innerHTML = divCards;
-}
 
 addDiv(arrayCategory);
-
-function addDiv() {
-  for (let categoryChecks of arrayCategory) {
-    divChecks += `<div>
-  <input
-    type="checkbox"
-    id="${categoryChecks}"
-    value="${categoryChecks}"
-  />
-  <label for="${categoryChecks}">${categoryChecks}</label>
-</div>`;
-  }
-  checks.innerHTML = divChecks;
-}
-
-function checkboxCategory(event) {
-  const checkeds = [
-    ...document.querySelectorAll("input[type='checkbox']:checked"),
-  ].map((check) => check.value);
-  if (checkeds.length === 0) {
-    return event;
-  }
-  return event.filter((filterCheck) => checkeds.includes(filterCheck.category));
-}
 
 checks.addEventListener("change", () => {
   let aux = checkboxCategory(infoCards);
   createCard(aux);
 });
-
-// search
-
-const $searchInput = document.getElementById("searchInput");
 
 $searchInput.addEventListener("keyup", (e) => {
   const search = e.target.value.toLowerCase();
@@ -82,6 +39,6 @@ $searchInput.addEventListener("keyup", (e) => {
     }
   });
   if (variableFalse) {
-    padrecards.innerHTML = `<div class="diverror"><a class="ancorerror" href="./index.html">Return</a></div>`;
+    padrecards.innerHTML = `<div class="diverror"><a class="ancorerror" href="./UpEvent.html">Return</a></div>`;
   }
 });
