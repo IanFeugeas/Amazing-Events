@@ -27,17 +27,24 @@ export function createCards(events, cards) {
   cards.innerHTML = divCards;
 }
 
-export function upCommingCards(events, currentDate, upcoming, cards) {
-  let currentEvents = "";
-
+export function filterPastEvents(events, date) {
+  let pastEvents = [];
   for (let event of events) {
-    if (event.date > currentDate && upcoming) {
-      currentEvents += allCards(event);
-    } else if (event.date < currentDate && !upcoming) {
-      currentEvents += allCards(event);
+    if (date > event.date) {
+      pastEvents.push(event);
     }
-    cards.innerHTML = currentEvents;
   }
+  return pastEvents;
+}
+
+export function filterUpcommingEvents(events, date) {
+  let upComingEvents = [];
+  for (let event of events) {
+    if (date < event.date) {
+      upComingEvents.push(event);
+    }
+  }
+  return upComingEvents;
 }
 
 export function addCheckbox(category, checks) {
