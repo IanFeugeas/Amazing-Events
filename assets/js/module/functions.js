@@ -111,17 +111,15 @@ export function detailsCard(event) {
           <p class="card-text"><b>Category:</b>${event.category}</p>
           <p class="card-text"><b>Place:</b>${event.place}</p>
           <p class="card-text"><b>Capacity:</b>${event.capacity}</p>
-          <p class="card-text"><b>Assistance/Estimate:</b> ${asistOrEstimate(
-            event
-          )}</p>
+          <p class="card-text"> ${asistOrEstimate(event)}</p>
           <p class="card-text"><b>Price:</b> $ ${event.price}</p>
         </div>`;
 }
 
 export function asistOrEstimate(contain) {
   let see = "";
-  let assistance = "Assistance";
-  let estimate = "Estimate";
+  let assistance = "<b>Assistance:</b>";
+  let estimate = "<b>Estimate:</b>";
   if (contain.assistance) {
     see = assistance + " " + contain.assistance;
   } else if (contain.estimate) {
