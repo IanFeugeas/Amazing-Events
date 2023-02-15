@@ -1,28 +1,28 @@
-export function createCards(events) {
-  return (divCards += `<div id="tarjetas" class="card">
+export function printCards(events) {
+  return `<div id="tarjetas" class="card">
     <div class="divimgcards"><img
       id="imgcard"
-      src= ${infocard.image}
+      src= ${events.image}
       class="card-img-top"
       alt=""
     /></div>
     <div id="bodycard" class="card-body">
-      <h5 class="card-title"> ${infocard.name}</h5>
+      <h5 class="card-title"> ${events.name}</h5>
       <p class="card-text">
-        ${infocard.description}
+        ${events.description}
       </p>
       <div class="divprice">
-        <p class="textprice"><b>Price:</b> $ ${infocard.price}</p>
-        <a id="detailsbutton" href="./details.html?id=${infocard._id}" class="btn btn-primary" ><b> Go details</b></a>
+        <p class="textprice"><b>Price:</b> $ ${events.price}</p>
+        <a id="detailsbutton" href="./details.html?id=${events._id}" class="btn btn-primary" ><b> Go details</b></a>
       </div>
     </div>
-  </div>`);
+  </div>`;
 }
 
-export function addCard(events, cards) {
+export function createCards(events, cards) {
   let divCards = "";
   for (let event of events) {
-    divCards += createCards(event);
+    divCards += printCards(event);
   }
   cards.innerHTML = divCards;
 }
@@ -66,7 +66,7 @@ export function categoryFilter(event) {
   if (filterCheckbox.length === 0) {
     return event;
   }
-  return event.filter((filters) => inputFilter.includes(filters.category));
+  return event.filter((filters) => filterCheckbox.includes(filters.category));
 }
 
 export function filterSearch(search, e) {
@@ -77,11 +77,15 @@ export function filterSearch(search, e) {
 }
 
 export function errorSearch() {
-  return `<div class="diverror"><a class="ancorerror" href="./index.html">Return</a></div>`;
+  return `<div class="diverror"></div>`;
 }
 
-export function printError(card, error) {
-  errorMessage(error);
+export function condicionalError(card, error) {
+  if (card.length === 0) {
+    error.innerHTML = errorSearch();
+  } else {
+    return printCards(card, error);
+  }
 }
 
 export function createDetailsCard(events, cards) {
