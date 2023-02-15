@@ -114,7 +114,7 @@ export function detailsCard(event) {
           <p class="card-text"><b>Assistance/Estimate:</b> ${asistOrEstimate(
             event
           )}</p>
-          <p class="card-text"><b>Price:</b> $ ${eventDate.price}</p>
+          <p class="card-text"><b>Price:</b> $ ${event.price}</p>
         </div>`;
 }
 
