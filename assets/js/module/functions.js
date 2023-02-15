@@ -134,3 +134,115 @@ export function asistOrEstimate(contain) {
   }
   return see;
 }
+
+//Stats
+
+export function highestAttendance(events) {
+  let highestPercentage = 0;
+  let highestEvent;
+  for (let event of events) {
+    let percentageOfAttendance = (event.assistance * 100) / event.capacity;
+    if (highestPercentage === 0 || percentageOfAttendance > highestPercentage) {
+      highestPercentage = percentageOfAttendance;
+      highestEvent = event;
+    }
+  }
+  return highestEvent;
+}
+
+export function lowestAttendance(events) {
+  let lowest = 0;
+  let lowestEvent;
+  for (let event of events) {
+    let percentageOfAttendance = (event.assistance * 100) / event.capacity;
+    if (lowest === 0 || percentageOfAttendance < lowest) {
+      lowest = percentageOfAttendance;
+      lowestEvent = event;
+    }
+  }
+  return lowestEvent;
+}
+
+export function largedCapacity(events) {
+  let larger = 0;
+  let largerCapacity;
+  for (let event of events) {
+    if (larger === 0 || event.capacity > larger) {
+      larger = event.capacity;
+      largerCapacity = event;
+    }
+  }
+  return largerCapacity;
+}
+
+export function upcomingStatistics(events) {
+  let upcomingStatistics = [];
+  let upcomingCategories = Array.from(
+    new Set(events.map((event) => event.category))
+  );
+
+  let upcomingRevenues = [];
+  for (let category of upcomingCategories) {
+    let content = 0;
+    for (let event of events) {
+      if (event.category === category) {
+        content += event.estimate * event.price;
+      }
+    }
+    upcomingRevenues.push(content);
+  }
+
+  let upcomingAttendance = [];
+  for (let category of upcomingCategories) {
+    let estimateAttendance = 0;
+    let capacity = 0;
+    for (let event of events) {
+      if (event.category === category) {
+        estimateAttendance += event.estimate;
+        capacity += event.capacity;
+      }
+    }
+    upcomingAttendance.push((estimateAttendance * 100) / capacity);
+  }
+
+  upcomingStatistics.push(
+    upcomingCategories,
+    upcomingRevenues,
+    upcomingAttendance
+  );
+  return upcomingStatistics;
+}
+
+export function pastStatistics(events) {
+  let pastStatistics = [];
+  let pastCategories = Array.from(
+    new Set(events.map((event) => event.category))
+  );
+
+  let pastRevenues = [];
+  for (let category of pastCategories) {
+    let revenueCont = 0;
+    for (let event of events) {
+      if (event.category === category) {
+        revenueCont += event.assistance * event.price;
+      }
+    }
+    pastRevenues.push(revenueCont);
+  }
+
+  let pastPercentageOfAttendance = [];
+  for (let category of pastCategories) {
+    let assistance = 0;
+    let capacity = 0;
+    for (let event of events) {
+      if (event.category === category) {
+        assistance += event.assistance;
+        capacity += event.capacity;
+      }
+    }
+    pastPercentageOfAttendance.push((assistance * 100) / capacity);
+  }
+
+  pastStatistics.push(pastCategories, pastRevenues, pastPercentageOfAttendance);
+  return pastStatistics;
+}
